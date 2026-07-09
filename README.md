@@ -27,6 +27,9 @@ npm run build
 3. SourceをGitHub Actionsにします.
 4. mainへpushすると `.github/workflows/deploy.yml` が `dist/` を公開します.
 
+`Get Pages site failed` / `Not Found` が出る場合は, GitHub側でPagesが未有効化, またはSourceがGitHub Actionsになっていない状態です.
+`actions/configure-pages` の `enablement: true` は `GITHUB_TOKEN` では使えないため, このリポジトリではSettingsから手動で有効化します.
+
 ## 内容
 
 - GitとGitHubの違い.
