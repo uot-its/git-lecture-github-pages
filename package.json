@@ -1,0 +1,14 @@
+{
+  "name": "github-training-cyberpunk-pages",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/clean.mjs && tsc -p tsconfig.json && node scripts/build.mjs",
+    "preview": "npm run build && node scripts/serve.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
