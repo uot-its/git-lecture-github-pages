@@ -435,7 +435,7 @@ function renderFlow(): HTMLElement {
 }
 
 function renderCommands(): HTMLElement {
-  const search = el('input', { class: 'search', id: 'command-search', type: 'search', placeholder: 'コマンドや用途で検索, 例: push, 退避, 確認' });
+  const search = el('input', { class: 'search', id: 'command-search', type: 'search', 'aria-label': '基本コマンドを検索', placeholder: 'コマンドや用途で検索, 例: push, 退避, 確認' });
   const grid = el('div', { class: 'command-grid', id: 'command-grid' }, commands.map((command) => {
     return el('article', { class: 'command-card', 'data-search': `${command.name} ${command.group} ${command.use}` }, [
       el('div', { class: 'command-meta' }, [
@@ -446,7 +446,10 @@ function renderCommands(): HTMLElement {
       codeBlock(command.code)
     ]);
   }));
-  return section('commands', 'CLI', '最低限覚えるコマンド', '迷ったら最初に `git status`. コマンドは場面とセットで覚える.', [search, grid]);
+  const actions = el('div', { class: 'hero-actions' }, [
+    el('a', { class: 'neon-button', href: './commands.html' }, ['Git / GitHub CLI 100選を見る'])
+  ]);
+  return section('commands', 'CLI', '最低限覚えるコマンド', '迷ったら最初に `git status`. コマンドは場面とセットで覚える.', [search, grid, actions]);
 }
 
 function renderPrReview(): HTMLElement {
