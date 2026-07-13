@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^powershell -NoProfile -Command \"Get-Content dist/assets/main\\.js \\| Select-String -Pattern 'name: \\\\'log\\\\'' -SimpleMatch; Get-Content dist/assets/main\\.js \\| Select-String -Pattern 'group: \\\\'テスト\\\\'' -SimpleMatch; Get-Content dist/assets/main\\.js \\| Select-String -Pattern 'group: \\\\'復旧\\\\'' -SimpleMatch \\| Select-Object -First 10\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
